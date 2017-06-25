@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <md-icon class="mat-icon material-icons" title="Select a theme!" color="primary">format_color_fill</md-icon>
+  
+  <app-add-task (addTodo)="addTodo($event)"></app-add-task>
+  <app-todo-list [todos]="todos" (deleteTodo)="deleteTodo($event)" (completeTodo)="completeTodo($event)"></app-todo-list>
+</div>

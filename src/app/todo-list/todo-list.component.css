@@ -1,0 +1,30 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container md-card{
+    margin: 5px 0px;
+}
+
+md-card{
+    display: flex;
+    justify-content: space-between;
+}
+.button-wrapper button {
+    margin: 0px 5px;
+}
+md-card-subtitle {
+    display: none;
+    font-size: 8px;
+    color: #323232;
+}
+md-card:hover md-card-subtitle {
+    display: block;
+}
+
+.control-wrapper {
+    min-width: 200px;
+    display: flex;
+    justify-content: flex-end;
+}

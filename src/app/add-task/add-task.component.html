@@ -1,0 +1,7 @@
+<div class="input-wrapper">
+  <md-input-container>
+    <input mdInput placeholder="New task" #newTodo>
+  </md-input-container>
+  <button class="add-button" md-raised-button (click)="onAddTodo(newTodo.value); newTodo.value = '';">Add</button>
+</div>
+
