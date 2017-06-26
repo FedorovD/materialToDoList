@@ -5,10 +5,8 @@ export class SaveService {
   todos: any[] = [];
   settings: any;
   constructor() {
-    if (localStorage.getItem('settings')) this.settings = JSON.parse(localStorage.getItem('settings'));
-    else {
-      localStorage.setItem('settings', '{"showCompleted": false, "colorScheme": "blue"}');
-    }
+    if (!localStorage.getItem('settings')) localStorage.setItem('settings', '{"showCompleted": false, "colorScheme": "blue-color"}');
+    this.settings = JSON.parse(localStorage.getItem('settings'));
 
     if (localStorage.getItem('todos')) {
       localStorage.getItem('todos').split(';').forEach(todo => {

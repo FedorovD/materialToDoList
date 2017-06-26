@@ -3,13 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdInputModule, MdIconModule, MdToolbarModule, MdCardModule, MdSlideToggleModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MdButtonModule,
+  MdInputModule,
+  MdIconModule,
+  MdToolbarModule,
+  MdCardModule,
+  MdSlideToggleModule,
+  MdTooltipModule,
+  MdDialogModule,
+} from '@angular/material';
 import 'hammerjs';
 
-import { AppComponent } from './app.component';
+import { AppComponent, DialogOverviewExampleDialog } from './app.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+
 
 import { SaveService } from './_services/save.service';
 import { CompletedPipe } from './_pipes/completed.pipe';
@@ -19,8 +29,10 @@ import { CompletedPipe } from './_pipes/completed.pipe';
     AppComponent,
     AddTaskComponent,
     TodoListComponent,
-    CompletedPipe
+    CompletedPipe,
+    DialogOverviewExampleDialog
   ],
+  entryComponents: [DialogOverviewExampleDialog],
   imports: [
     BrowserModule,
     FormsModule,
@@ -31,7 +43,9 @@ import { CompletedPipe } from './_pipes/completed.pipe';
     MdIconModule,
     MdToolbarModule,
     MdCardModule,
-    MdSlideToggleModule
+    MdSlideToggleModule,
+    MdTooltipModule,
+    MdDialogModule
   ],
   providers: [SaveService],
   bootstrap: [AppComponent]
