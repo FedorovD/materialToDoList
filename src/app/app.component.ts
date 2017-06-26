@@ -9,9 +9,11 @@ import { SaveService } from './_services/save.service';
 })
 export class AppComponent {
   todos: any = [];
+  settings: any = {};
 
   constructor(private saveService: SaveService) {
     this.todos = this.saveService.getTodos();
+    this.settings = this.saveService.getSettings() || false;
   }
   addTodo(title) {
     if (title.length) {
@@ -28,5 +30,9 @@ export class AppComponent {
   completeTodo(todo_id) {
     this.saveService.completeTodo(todo_id);
     this.todos = this.saveService.getTodos();
+  }
+
+  completeToogle(event) {
+    this.saveService.setSettings('showCompleted', event);
   }
 }

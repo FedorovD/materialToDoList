@@ -2,5 +2,5 @@
   <md-icon class="mat-icon material-icons" title="Select a theme!" color="primary">format_color_fill</md-icon>
   
   <app-add-task (addTodo)="addTodo($event)"></app-add-task>
-  <app-todo-list [todos]="todos" (deleteTodo)="deleteTodo($event)" (completeTodo)="completeTodo($event)"></app-todo-list>
+  <app-todo-list [todos]="todos" [settings]="settings" (deleteTodo)="deleteTodo($event)" (completeTodo)="completeTodo($event)" (completeToogle)="completeToogle($event)"></app-todo-list>
 </div>

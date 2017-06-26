@@ -3,7 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SaveService {
   todos: any[] = [];
+  settings: any;
   constructor() {
+    if (localStorage.getItem('settings')) this.settings = JSON.parse(localStorage.getItem('settings'));
+    else {
+      localStorage.setItem('settings', '{"showCompleted": false, "colorScheme": "blue"}');
+    }
+
     if (localStorage.getItem('todos')) {
       localStorage.getItem('todos').split(';').forEach(todo => {
         this.todos.push(JSON.parse(todo));
@@ -16,7 +22,7 @@ export class SaveService {
   }
 
   addTodo(title: String) {
-    let newTodo = {
+    const newTodo = {
       title: title,
       completed: false,
       id: Math.random().toString(16).slice(2),
@@ -62,11 +68,16 @@ export class SaveService {
   }
 
   getSettings() {
-
+    return this.settings;
   }
 
-  setSettings() {
-    if (!localStorage.getItem('settings')) localStorage.setItem('settings', '');
+  setSettings(key: string, value: any) {
+    this.settings[key] = value;
+    this.updateSettings();
+  }
+
+  updateSettings() {
+    localStorage.setItem('settings', JSON.stringify(this.settings));
   }
 
 

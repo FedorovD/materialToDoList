@@ -7,13 +7,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
   @Input() todos;
+  @Input() settings;
   @Output() deleteTodo: EventEmitter<any> = new EventEmitter();
   @Output() completeTodo: EventEmitter<any> = new EventEmitter();
+  @Output() completeToogle: EventEmitter<any> = new EventEmitter();
   completedToogle: boolean;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.completedToogle = this.settings.showCompleted;
   }
 
   onDelete(todo_id) {
@@ -22,5 +26,8 @@ export class TodoListComponent implements OnInit {
 
   onComplete(todo_id) {
     this.completeTodo.emit(todo_id);
+  }
+  onCompletedToogle(event) {
+    this.completeToogle.emit(event.checked);
   }
 }

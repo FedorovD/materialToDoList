@@ -1,6 +1,6 @@
 <div class="card-container">
   <div class="control-wrapper">
-  <md-slide-toggle color="primary" [(ngModel)]="completedToogle" name="completedToogle">show completed</md-slide-toggle>
+  <md-slide-toggle color="primary" [(ngModel)]="completedToogle" name="completedToogle" (change)="onCompletedToogle($event)" switch="on">show completed</md-slide-toggle>
 </div>
   <md-card *ngFor="let todo of todos | completed:completedToogle">
     <md-card-title ng [ngStyle]="todo.completed?{'text-decoration':'line-through'}:{'text-decoration':'none'}">{{todo.title}}</md-card-title>
