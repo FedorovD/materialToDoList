@@ -1,6 +1,6 @@
 <div class="container">
-  <md-icon class="mat-icon material-icons" mdTooltip="Select a theme!" mdTooltipPosition="left" (click)="openDialog()" color="primary">format_color_fill</md-icon>
+  <md-icon class="mat-icon material-icons" mdTooltip="Select a theme!" mdTooltipPosition="left" (click)="openDialog()" color={{settings.colorScheme}}>format_color_fill</md-icon>
   
-  <app-add-task (addTodo)="addTodo($event)"></app-add-task>
+  <app-add-task (addTodo)="addTodo($event)" [settings]="settings"></app-add-task>
   <app-todo-list [todos]="todos" [settings]="settings" (deleteTodo)="deleteTodo($event)" (completeTodo)="completeTodo($event)" (completeToogle)="completeToogle($event)"></app-todo-list>
 </div>

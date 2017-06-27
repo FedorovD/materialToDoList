@@ -39,11 +39,17 @@ export class AppComponent {
   }
 
   openDialog() {
-    this.dialog.open(DialogOverviewExampleDialog, {
+    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       height: '96px',
       width: '96px',
       position: { top: '0px', right: '0px' }
     });
+
+    dialogRef.afterClosed().subscribe(color => {
+      this.saveService.setSettings('colorScheme', color);
+    });
+
+
   }
 
 }
@@ -53,15 +59,12 @@ export class AppComponent {
   selector: 'dialog-overview-example-dialog',
   template: `
   <md-grid-list cols="2" rowHeight="2:1">
-  <md-grid-tile><button md-mini-fab class="blue-color_bg" (click)="changeTheme($event)" name="blue-color"></button></md-grid-tile>
-  <md-grid-tile><button md-mini-fab class="purple-color_bg"  (click)="changeTheme($event)" name="purple-color"></button></md-grid-tile>
-  <md-grid-tile><button md-mini-fab class="pink-color_bg" (click)="changeTheme($event)" name="pink-color"></button></md-grid-tile>
-  <md-grid-tile><button md-mini-fab class="cyan-color_bg" (click)="changeTheme($event)" name="cyan-color"></button></md-grid-tile>
+  <md-grid-tile><button md-mini-fab color="primary" md-dialog-close="primary"></button></md-grid-tile>
+  <md-grid-tile><button md-mini-fab color="accent"  md-dialog-close="accent"></button></md-grid-tile>
+  <md-grid-tile><button md-mini-fab color="warn" md-dialog-close="warn"></button></md-grid-tile>
+  <md-grid-tile><button md-mini-fab color="dark" md-dialog-close></button></md-grid-tile>
 </md-grid-list>
   `
 })
 export class DialogOverviewExampleDialog {
-  changeTheme(event) {
-
-  }
 }

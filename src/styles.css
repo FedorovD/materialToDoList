@@ -1,77 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
-.container {
-    max-width: 940px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.mat-dialog-container {
-    overflow: hidden !important;
-    padding: 5px !important;
+@import url('https://fonts.googleapis.com/css?family=Fresca');
+html,
+body,
+.mat-button-toggle,
+.mat-button-base,
+.mat-button,
+.mat-raised-button,
+.mat-fab,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-card,
+.mat-checkbox,
+.mat-input-container,
+.mat-list,
+.mat-menu-item,
+.mat-radio-button,
+.mat-select,
+.mat-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content,
+.mat-simple-snackbar,
+.mat-tab-label,
+.mat-slide-toggle-content,
+.mat-toolbar,
+.mat-tooltip {
+  font-family: 'Fresca', sans-serif;
+  font-size: 16px;
 }
 
-.blue-color {
-    color: #1E88E5;
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.blue-color_bg {
-    background-color: #1E88E5!important;
-}
-.purple-color {
-    color: #8E24AA;
-}
-.purple-color_bg {
-    background-color: #8E24AA!important;
-}
-.pink-color {
-    color: #D81B60;
-}
-.pink-color_bg {
-    background-color: #D81B60!important;
-}
-.cyan-color {
-    color: #00ACC1;
-}
-.cyan-color_bg {
-    background-color: #00ACC1!important;
+
+.mat-dialog-container {
+  overflow: hidden !important;
+  padding: 5px !important;
 }
 
 @-webkit-keyframes moveup {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
   }
   25% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(1em);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(1em);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(1em);
   }
 }
+
 @keyframes moveup {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
   }
   25% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(1em);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(1em);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(1em);
   }
 }
+
 @-webkit-keyframes movedown {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
   }
   25% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-1em);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-1em);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-1em);
   }
 }
+
 @keyframes movedown {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
   }
   25% {
     -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-1em);
-            transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-1em);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-1em);
   }
 }
 
@@ -82,14 +96,16 @@
   width: 3em;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
   -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg);
-          transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg);
+  transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg);
 }
+
 .layer:nth-of-type(1) {
   background: #534a47;
   margin-top: 1.5em;
   -webkit-animation: movedown 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9s infinite normal;
-          animation: movedown 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9s infinite normal;
+  animation: movedown 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9s infinite normal;
 }
+
 .layer:nth-of-type(1):before {
   content: '';
   position: absolute;
@@ -97,14 +113,16 @@
   height: 85%;
   background: #37332f;
 }
+
 .layer:nth-of-type(2) {
   background: #5a96bc;
   margin-top: 0.75em;
 }
+
 .layer:nth-of-type(3) {
   background: rgba(255, 255, 255, 0.6);
   -webkit-animation: moveup 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) infinite normal;
-          animation: moveup 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) infinite normal;
+  animation: moveup 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) infinite normal;
 }
 
 .loader-container {
@@ -112,6 +130,5 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-

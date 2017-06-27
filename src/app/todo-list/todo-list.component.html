@@ -1,13 +1,13 @@
 <div class="card-container">
   <div class="control-wrapper">
-  <md-slide-toggle color="primary" [(ngModel)]="completedToogle" name="completedToogle" (change)="onCompletedToogle($event)">show completed</md-slide-toggle>
+  <md-slide-toggle color={{settings.colorScheme}} [(ngModel)]="completedToogle" name="completedToogle" (change)="onCompletedToogle($event)">show completed</md-slide-toggle>
 </div>
   <md-card *ngFor="let todo of todos | completed:completedToogle">
     <md-card-title ng [ngStyle]="todo.completed?{'text-decoration':'line-through'}:{'text-decoration':'none'}">{{todo.title}}</md-card-title>
     <md-card-subtitle>{{todo.created  | date:"d MMMM y"}}</md-card-subtitle> 
     <div class="button-wrapper">
-      <button md-mini-fab color="primary" mdTooltip="complete" (click)="onComplete(todo.id)"><md-icon>{{todo.completed?"check":"close"}}</md-icon></button>
-      <button md-mini-fab color="primary" mdTooltip="delete" (click)="onDelete(todo.id)"><md-icon>delete</md-icon></button>
+      <button md-mini-fab color={{settings.colorScheme}} mdTooltip="complete" (click)="onComplete(todo.id)"><md-icon>{{todo.completed?"check":"close"}}</md-icon></button>
+      <button md-mini-fab color={{settings.colorScheme}} mdTooltip="delete" (click)="onDelete(todo.id)"><md-icon>delete</md-icon></button>
     </div>
   </md-card>
 </div>
